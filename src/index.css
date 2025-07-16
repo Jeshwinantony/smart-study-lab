@@ -36,6 +36,31 @@ All colors MUST be HSL.
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
+    /* Feature Colors */
+    --feature-sky: 198 93% 60%;
+    --feature-sky-light: 198 93% 95%;
+    --feature-sky-foreground: 198 93% 15%;
+    
+    --feature-indigo: 239 84% 67%;
+    --feature-indigo-light: 239 84% 95%;
+    --feature-indigo-foreground: 239 84% 15%;
+    
+    --feature-green: 142 71% 45%;
+    --feature-green-light: 142 71% 95%;
+    --feature-green-foreground: 142 71% 15%;
+    
+    --feature-lavender: 266 85% 78%;
+    --feature-lavender-light: 266 85% 95%;
+    --feature-lavender-foreground: 266 85% 15%;
+    
+    --feature-yellow: 47 96% 62%;
+    --feature-yellow-light: 47 96% 95%;
+    --feature-yellow-foreground: 47 96% 15%;
+
+    /* Smooth Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
