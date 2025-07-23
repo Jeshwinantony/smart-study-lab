@@ -36,26 +36,26 @@ All colors MUST be HSL.
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    /* Feature Colors */
-    --feature-sky: 198 93% 60%;
-    --feature-sky-light: 198 93% 95%;
-    --feature-sky-foreground: 198 93% 15%;
+    /* Feature Colors - Updated color psychology */
+    --feature-teal: 178 64% 48%;
+    --feature-teal-light: 178 64% 90%;
+    --feature-teal-foreground: 178 64% 20%;
     
-    --feature-indigo: 239 84% 67%;
-    --feature-indigo-light: 239 84% 95%;
-    --feature-indigo-foreground: 239 84% 15%;
+    --feature-indigo: 231 75% 65%;
+    --feature-indigo-light: 231 75% 90%;
+    --feature-indigo-foreground: 231 75% 20%;
     
-    --feature-green: 142 71% 45%;
-    --feature-green-light: 142 71% 95%;
-    --feature-green-foreground: 142 71% 15%;
+    --feature-green: 142 76% 58%;
+    --feature-green-light: 142 76% 90%;
+    --feature-green-foreground: 142 76% 20%;
     
-    --feature-lavender: 266 85% 78%;
-    --feature-lavender-light: 266 85% 95%;
-    --feature-lavender-foreground: 266 85% 15%;
+    --feature-blue: 213 84% 58%;
+    --feature-blue-light: 213 84% 90%;
+    --feature-blue-foreground: 213 84% 20%;
     
-    --feature-yellow: 47 96% 62%;
-    --feature-yellow-light: 47 96% 95%;
-    --feature-yellow-foreground: 47 96% 15%;
+    --feature-orange: 25 95% 62%;
+    --feature-orange-light: 25 95% 90%;
+    --feature-orange-foreground: 25 95% 20%;
 
     /* Smooth Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

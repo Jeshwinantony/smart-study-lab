@@ -1,21 +1,23 @@
 import { useState } from "react";
-import { Brain, Calendar, Rocket, BookOpen, TestTube2, MessageCircle } from "lucide-react";
+import { Brain, Calendar, Rocket, BookOpen, TestTube2, MessageCircle, Menu } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import FeatureSwitchSheet from "@/components/FeatureSwitchSheet";
+import FeatureOutput from "@/components/FeatureOutput";
+import IdkOutput from "@/components/features/IdkOutput";
 
 const features = [
   {
     id: "idk",
-    route: "/idk",
+    route: "/idk", 
     title: "IDK",
     subtitle: "Doubt Explainer",
     description: "Get kid-friendly explanations for any topic",
     icon: Brain,
-    color: "feature-sky",
-    lightBg: "feature-sky-light"
+    color: "feature-teal",
+    lightBg: "feature-teal-light"
   },
   {
     id: "exam-kind",
@@ -40,31 +42,48 @@ const features = [
   {
     id: "examtmro",
     route: "/examtmro",
-    title: "ExamTmro",
+    title: "ExamTmro", 
     subtitle: "Recap & Mind Maps",
     description: "Generate structured revision packs using Blue Method",
     icon: BookOpen,
-    color: "feature-lavender",
-    lightBg: "feature-lavender-light"
+    color: "feature-blue",
+    lightBg: "feature-blue-light"
   },
   {
     id: "test-me",
     route: "/test-me",
     title: "test me",
-    subtitle: "Quiz & Flashcards",
+    subtitle: "Quiz & Flashcards", 
     description: "Practice with adaptive quizzes and spaced recall",
     icon: TestTube2,
-    color: "feature-yellow",
-    lightBg: "feature-yellow-light"
+    color: "feature-orange",
+    lightBg: "feature-orange-light"
   }
 ];
 
 const Index = () => {
   const navigate = useNavigate();
   const [showFeatureSwitch, setShowFeatureSwitch] = useState(false);
+  const [activeFeature, setActiveFeature] = useState<string | null>(null);
+  const [chatInput, setChatInput] = useState("");
 
-  const handleFeatureClick = (route: string) => {
-    navigate(route);
+  const handleFeatureClick = (featureId: string) => {
+    // For demo purposes, show the output directly
+    if (featureId === "idk") {
+      setActiveFeature("idk");
+    } else {
+      // Navigate to other features as before
+      const feature = features.find(f => f.id === featureId);
+      if (feature) navigate(feature.route);
+    }
+  };
+
+  const handleChatSubmit = () => {
+    if (chatInput.trim()) {
+      // Trigger IDK feature with the chat input
+      setActiveFeature("idk");
+      setChatInput("");
+    }
   };
 
   return (
@@ -87,8 +106,18 @@ const Index = () => {
             <input 
               placeholder="Ask me anything to get started..."
               className="flex-1 bg-transparent outline-none text-sm"
-              onFocus={() => setShowFeatureSwitch(true)}
+              value={chatInput}
+              onChange={(e) => setChatInput(e.target.value)}
+              onKeyPress={(e) => e.key === 'Enter' && handleChatSubmit()}
             />
+            <Button 
+              size="sm" 
+              onClick={handleChatSubmit}
+              disabled={!chatInput.trim()}
+              className="h-8 px-3"
+            >
+              Send
+            </Button>
           </div>
         </div>
         
@@ -104,10 +133,10 @@ const Index = () => {
             const Icon = feature.icon;
             
             return (
-              <Card 
+                <Card 
                 key={feature.id}
                 className="cursor-pointer hover:shadow-lg transition-all duration-300 hover:scale-105 group"
-                onClick={() => handleFeatureClick(feature.route)}
+                onClick={() => handleFeatureClick(feature.id)}
               >
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -157,10 +186,38 @@ const Index = () => {
         </Button>
       </div>
 
+      {/* Floating Feature Switch FAB */}
+      {activeFeature && (
+        <Button
+          className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg bg-primary hover:bg-primary/90 z-40"
+          onClick={() => setShowFeatureSwitch(true)}
+        >
+          <Menu className="h-5 w-5" />
+        </Button>
+      )}
+
       <FeatureSwitchSheet 
         open={showFeatureSwitch} 
         onOpenChange={setShowFeatureSwitch}
       />
+
+      {/* Feature Output Screens */}
+      <FeatureOutput
+        isVisible={activeFeature === "idk"}
+        onClose={() => setActiveFeature(null)}
+        accentColor="feature-teal"
+      >
+        <IdkOutput
+          explanation="Photosynthesis is like a magical kitchen inside plants! 🌱 Plants use sunlight (like turning on the oven), water from their roots (like getting ingredients), and carbon dioxide from the air (like adding spices) to make their own food called glucose. It's like they're cooking sugar for energy! The amazing part is that while they're making food, they also give us fresh oxygen to breathe - it's like getting a free gift while they cook!"
+          realWorldExample="Think of solar panels on houses - they also capture sunlight to make energy! Plants are like nature's solar panels, but even cooler because they also clean our air while making their food."
+          recapQuestions={[
+            "What three things do plants need for photosynthesis?",
+            "What do plants make during photosynthesis?",
+            "What helpful gas do plants give us?"
+          ]}
+          olderStudentContent="The chemical equation for photosynthesis is: 6CO₂ + 6H₂O + light energy → C₆H₁₂O₆ + 6O₂. This process occurs in chloroplasts, specifically in the thylakoids during light-dependent reactions and in the stroma during the Calvin cycle."
+        />
+      </FeatureOutput>
     </div>
   );
 };
