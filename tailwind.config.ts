@@ -53,10 +53,10 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				feature: {
-					sky: {
-						DEFAULT: 'hsl(var(--feature-sky))',
-						light: 'hsl(var(--feature-sky-light))',
-						foreground: 'hsl(var(--feature-sky-foreground))'
+					teal: {
+						DEFAULT: 'hsl(var(--feature-teal))',
+						light: 'hsl(var(--feature-teal-light))',
+						foreground: 'hsl(var(--feature-teal-foreground))'
 					},
 					indigo: {
 						DEFAULT: 'hsl(var(--feature-indigo))',
@@ -68,15 +68,15 @@ export default {
 						light: 'hsl(var(--feature-green-light))',
 						foreground: 'hsl(var(--feature-green-foreground))'
 					},
-					lavender: {
-						DEFAULT: 'hsl(var(--feature-lavender))',
-						light: 'hsl(var(--feature-lavender-light))',
-						foreground: 'hsl(var(--feature-lavender-foreground))'
+					blue: {
+						DEFAULT: 'hsl(var(--feature-blue))',
+						light: 'hsl(var(--feature-blue-light))',
+						foreground: 'hsl(var(--feature-blue-foreground))'
 					},
-					yellow: {
-						DEFAULT: 'hsl(var(--feature-yellow))',
-						light: 'hsl(var(--feature-yellow-light))',
-						foreground: 'hsl(var(--feature-yellow-foreground))'
+					orange: {
+						DEFAULT: 'hsl(var(--feature-orange))',
+						light: 'hsl(var(--feature-orange-light))',
+						foreground: 'hsl(var(--feature-orange-foreground))'
 					}
 				},
 				sidebar: {
