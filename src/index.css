@@ -37,9 +37,9 @@ All colors MUST be HSL.
     --ring: 222.2 84% 4.9%;
 
     /* Feature Colors */
-    --feature-teal: 178 60% 48%;
-    --feature-teal-light: 178 60% 95%;
-    --feature-teal-foreground: 178 60% 15%;
+    --feature-sky: 198 93% 60%;
+    --feature-sky-light: 198 93% 95%;
+    --feature-sky-foreground: 198 93% 15%;
     
     --feature-indigo: 239 84% 67%;
     --feature-indigo-light: 239 84% 95%;
@@ -49,13 +49,13 @@ All colors MUST be HSL.
     --feature-green-light: 142 71% 95%;
     --feature-green-foreground: 142 71% 15%;
     
-    --feature-blue: 213 90% 50%;
-    --feature-blue-light: 213 90% 95%;
-    --feature-blue-foreground: 213 90% 15%;
+    --feature-lavender: 266 85% 78%;
+    --feature-lavender-light: 266 85% 95%;
+    --feature-lavender-foreground: 266 85% 15%;
     
-    --feature-orange: 25 95% 53%;
-    --feature-orange-light: 25 95% 95%;
-    --feature-orange-foreground: 25 95% 15%;
+    --feature-yellow: 47 96% 62%;
+    --feature-yellow-light: 47 96% 95%;
+    --feature-yellow-foreground: 47 96% 15%;
 
     /* Smooth Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
